@@ -2,6 +2,7 @@ import { useState } from "react";
 import Digits from "./components/digits/Digits";
 import "./App.scss";
 import Operators from "./components/operators/Operators";
+import Result from "./components/result/Result";
 
 function App() {
   const [calc, setCalc] = useState("");
@@ -64,6 +65,7 @@ function App() {
   return (
     <div className="app">
       <div className="app__constructor">
+        <Result result={result} calc={calc} />
         <Operators updateCalc={updateCalc} deleteLast={deleteLast} />
         <Digits
           createDigits={createDigits}

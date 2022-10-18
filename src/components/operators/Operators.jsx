@@ -1,3 +1,5 @@
+import "./Operators.scss";
+
 const Operators = (props) => {
     return (
       <div className="operators">

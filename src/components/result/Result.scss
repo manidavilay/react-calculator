@@ -1,0 +1,13 @@
+.result {
+    padding: 16px;
+    background-color: var(--dark);
+    text-align: right;
+    color: var(--light);
+    font-size: 24px;
+    font-weight: 300;
+
+    span {
+        color: #888888;
+        font-size: 14px;
+    }
+}

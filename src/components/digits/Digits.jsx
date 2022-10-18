@@ -1,3 +1,5 @@
+import "./Digits.scss";
+
 const Digits = (props) => {
   return (
     <div className="digits">
