@@ -3,6 +3,7 @@ import Digits from "./components/digits/Digits";
 import "./App.scss";
 import Operators from "./components/operators/Operators";
 import Result from "./components/result/Result";
+import Footer from "./components/footer/Footer";
 
 function App() {
   const [calc, setCalc] = useState("");
@@ -64,6 +65,7 @@ function App() {
 
   return (
     <div className="app">
+      <h1 className="app__title">Simple Calculator in React | TypeScript</h1>
       <div className="app__constructor">
         <Result result={result} calc={calc} />
         <Operators updateCalc={updateCalc} deleteLast={deleteLast} />
@@ -73,6 +75,7 @@ function App() {
           calculate={calculate}
         />
       </div>
+      <Footer />
     </div>
   );
 }
