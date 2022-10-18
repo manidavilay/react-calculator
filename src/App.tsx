@@ -27,7 +27,7 @@ function App() {
   };
 
   // Update calcul
-  const updateCalc = (value: string) => {
+  const updateCalc = (value: string): void => {
     if (
       (ops.includes(value) && calc === "") ||
       (ops.includes(value) && ops.includes(calc.slice(-1)))
@@ -42,12 +42,12 @@ function App() {
   };
 
   // Calculate
-  const calculate = () => {
+  const calculate = (): void => {
     setCalc(eval(calc).toString());
   };
 
   // Delete last digit or value
-  const deleteLast = () => {
+  const deleteLast = (): void => {
     if (calc === "") {
       return;
     }
