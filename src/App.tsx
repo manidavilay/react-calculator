@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Digits from "./components/digits/Digits";
 import "./App.scss";
+import Operators from "./components/operators/Operators";
 
 function App() {
   const [calc, setCalc] = useState("");
@@ -43,9 +44,27 @@ function App() {
     setCalc(eval(calc).toString());
   };
 
+  // Delete last digit or value
+  const deleteLast = () => {
+    if (calc === "") {
+      return;
+    }
+
+    const value = calc.slice(0, -1); // remove the last value
+
+    setCalc(value);
+
+    if (ops.includes(value.slice(-1))) {
+      setResult(eval(value.toString().slice(0, -1)));
+    } else {
+      setResult(eval(value.toString()));
+    }
+  };
+
   return (
     <div className="app">
       <div className="app__constructor">
+        <Operators updateCalc={updateCalc} deleteLast={deleteLast} />
         <Digits
           createDigits={createDigits}
           updateCalc={updateCalc}
